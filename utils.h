@@ -233,5 +233,7 @@ int getLargestFromSeries(struct LL* list) {
 			}
 		}
 	}
+
+	return largest;
 }
 
