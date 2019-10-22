@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int is3or5(int a) {
 	int result = 0;
@@ -22,7 +23,9 @@ int isPrime(int a) {
 	int i;
 	int result = 1;
 
-	for(i = 2; i < a; i++) {
+	int max = floor(sqrt(a));
+
+	for(i = 2; i < max; i++) {
 		if( (a % i) == 0 ) {
 			result = 0;
 		}
@@ -35,10 +38,16 @@ int isPrime(int a) {
 }
 
 long isPrimeLong(long a) { 
-	long i;
+	long i = 0;
 	long result = 1;
 
-	for(i = 2; i < a; i++) {
+	long max = floor(sqrt(a));
+
+	for(i = 2; i < max; i++) {
+		if(i % 1000000000 == 0) {
+			printf("%ld checking\n", i);
+			printf("%lf percent done \n", (float)i / (float)max);
+		}
 		if( (a % i) == 0 ) {
 			result = 0;
 		}
@@ -224,6 +233,5 @@ int getLargestFromSeries(struct LL* list) {
 			}
 		}
 	}
-	
-	return largest;
 }
+
