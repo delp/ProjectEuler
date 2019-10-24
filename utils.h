@@ -25,8 +25,9 @@ int isPrime(int a) {
 
 	int max = floor(sqrt(a));
 
-	for(i = 2; i < max; i++) {
+	for(i = 2; i <= max; i++) {
 		if( (a % i) == 0 ) {
+//			printf("%d div by %d\n", a ,i);
 			result = 0;
 		}
 	}
@@ -43,7 +44,7 @@ long isPrimeLong(long a) {
 
 	long max = floor(sqrt(a));
 
-	for(i = 2; i < max; i++) {
+	for(i = 2; i <= max; i++) {
 		if(i % 1000000000 == 0) {
 			printf("%ld checking\n", i);
 			printf("%lf percent done \n", (float)i / (float)max);
