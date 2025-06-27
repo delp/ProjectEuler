@@ -27,7 +27,6 @@ int isPrime(int a) {
 
 	for(i = 2; i <= max; i++) {
 		if( (a % i) == 0 ) {
-//			printf("%d div by %d\n", a ,i);
 			result = 0;
 		}
 	}
@@ -195,6 +194,17 @@ struct LL* getPalindromesFromSeries(struct LL* list) {
 	}
 
 	return even;
+}
+
+struct LL* buildIntegerSeries(int num) {
+	struct LL* series = newLinkedList();
+
+	int i;
+	for(i = 1; i <= num; i++) {
+		addNumber(series, i);
+	}
+
+	return series;
 }
 
 //This is really cool! build a list from another list, selecting
